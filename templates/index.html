@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie Fibonacci</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Generador de la Serie Fibonacci</h1>
+    <form method="post">
+        <label for="number">¿Cuántos números de Fibonacci quieres generar?</label>
+        <input type="number" name="number" id="number" min="1" required>
+        <button type="submit">Generar</button>
+    </form>
+    
+    {% if sequence %}
+        <h2>Serie Fibonacci:</h2>
+        <p>{{ sequence }}</p>
+        <h2>Gráfica de la Serie Fibonacci:</h2>
+        <img src="{{ graph_file }}" alt="Gráfica de Fibonacci">
+    {% endif %}
+</body>
+</html>
+
